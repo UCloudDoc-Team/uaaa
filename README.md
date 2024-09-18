@@ -10,5 +10,5 @@
     * 使用限制
         * [域名限制](/uaaa/introduction/Limit/domain)
 * 购买指南
-    * [计费项](/unet/buy/introduction)
-    * [计费示例](/unet/buy/Example)
+    * [计费项](/uaaa/buy/introduction)
+    * [计费示例](/uaaa/buy/Example)
