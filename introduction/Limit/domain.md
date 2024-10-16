@@ -11,7 +11,7 @@ UAAA目前支持加速的域名列表如下，其中满足列表中域名正则�
 | *.googlesource.com |
 | *.pythonhosted.org |
 | *.civitai.com      |
-| *.huggingface.com  |
+| *.huggingface.co  |
 | *.anaconda.org     |
 | *.conda.io         |
 | *.anaconda.com     |
