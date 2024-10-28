@@ -120,10 +120,10 @@ auto lo
 iface lo inet loopback
 auto eth0
 iface eth0 inet static
-    address 192.168.1.248/26
-    dns-nameservers 10.23.255.1 10.23.255.2 114.114.114.114
-    gateway 192.168.1.193
-    mtu 1454CopyErrorSuccess
+address 192.168.1.248/26
+dns-nameservers 10.23.255.1 10.23.255.2 114.114.114.114
+gateway 192.168.1.193
+mtu 1454CopyErrorSuccess
 ```
 
 修改 dns-nameservers 这一行为：
@@ -210,10 +210,10 @@ auto lo
 iface lo inet loopback
 auto eth0
 iface eth0 inet static
-    address 192.168.1.248/26
-    dns-nameservers 10.23.255.1 10.23.255.2 114.114.114.114
-    gateway 192.168.1.193
-    mtu 1454CopyErrorSuccess
+address 192.168.1.248/26
+dns-nameservers 10.23.255.1 10.23.255.2 114.114.114.114
+gateway 192.168.1.193
+mtu 1454CopyErrorSuccess
 ```
 
 修改 dns-nameservers 这一行为
