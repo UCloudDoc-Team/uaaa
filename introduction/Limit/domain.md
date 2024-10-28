@@ -15,3 +15,5 @@ UAAA目前支持加速的域名列表如下，其中满足列表中域名正则�
 | *.anaconda.org     |
 | *.conda.io         |
 | *.anaconda.com     |
+| *.k8s.io     |
+| *.gcr.io     |
