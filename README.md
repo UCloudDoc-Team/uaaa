@@ -10,7 +10,7 @@
     * [产品优势](/uaaa/introduction/Advantage)
     * 使用限制
         * [域名限制](/uaaa/introduction/Limit/domain)
-* [配置说明](/uaaa/configuration/configuration)
+    * [配置说明](/uaaa/configuration/configuration)
 * 购买指南
     * [计费项](/uaaa/buy/introduction)
     * [计费示例](/uaaa/buy/Example)
