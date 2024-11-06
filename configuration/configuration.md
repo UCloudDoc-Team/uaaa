@@ -12,14 +12,14 @@
 1. 修改/etc/resolv.conf 
 
 ```Plain
-sudo vim /etc/resolv.confCopyErrorSuccess
+sudo vim /etc/resolv.conf
 ```
 
 修改为以下内容：
 
 ```Plain
 nameserver 100.90.90.90
-nameserver 100.90.90.100CopyErrorSuccess
+nameserver 100.90.90.100
 ```
 
 保存退出，即可生效。
@@ -27,7 +27,7 @@ nameserver 100.90.90.100CopyErrorSuccess
 2. 进行持久化。查看当前网卡的配置文件 /etc/sysconfig/network-scripts/ifcfg-eth0
 
 ```Plain
-sudo vim /etc/sysconfig/network-scripts/ifcfg-eth0CopyErrorSuccess
+sudo vim /etc/sysconfig/network-scripts/ifcfg-eth0
 ```
 
 内容可能如下：
@@ -48,14 +48,14 @@ NM_CONTROLLED=no
 ONBOOT=yes
 STARTMODE=auto
 TYPE=Ethernet
-USERCTL=noCopyErrorSuccess
+USERCTL=no
 ```
 
 修改DNS相关配置如下：
 
 ```Plain
 DNS1=100.90.90.100
-DNS2=100.90.90.90CopyErrorSuccess
+DNS2=100.90.90.90
 ```
 
 保存并退出。
@@ -65,14 +65,14 @@ DNS2=100.90.90.90CopyErrorSuccess
 1. 修改当前的/etc/resolv.conf 配置文件
 
 ```Plain
-sudo vim /etc/resolv.confCopyErrorSuccess
+sudo vim /etc/resolv.conf
 ```
 
 修改为：
 
 ```Plain
 nameserver 100.90.90.90
-nameserver 100.90.90.100CopyErrorSuccess
+nameserver 100.90.90.100
 ```
 
 DNS配置即可生效。
@@ -82,7 +82,7 @@ DNS配置即可生效。
 **非cloud init启动管理**
 
 ```Plain
-sudo vim /etc/network/interfacesCopyErrorSuccess
+sudo vim /etc/network/interfaces
 ```
 
 其内容可能如下：
@@ -96,13 +96,13 @@ address 172.16.0.35
 netmask 255.255.255.240
 gateway 172.16.0.33
 mtu 1454
-dns-nameservers 10.23.255.1 10.23.255.2 114.114.114.114CopyErrorSuccess
+dns-nameservers 10.23.255.1 10.23.255.2 114.114.114.114
 ```
 
 修改 dns-nameservers 这一行为
 
 ```Plain
-dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114CopyErrorSuccess
+dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114
 ```
 
 并退出保存。
@@ -110,7 +110,7 @@ dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114CopyErrorSuccess
 **使用cloud init进行启动管理**
 
 ```Plain
-sudo vim /etc/network/interfaces.d/50-cloud-init.cfgCopyErrorSuccess
+sudo vim /etc/network/interfaces.d/50-cloud-init.cfg
 ```
 
 其内容可能如下：
@@ -123,13 +123,13 @@ iface eth0 inet static
 address 192.168.1.248/26
 dns-nameservers 10.23.255.1 10.23.255.2 114.114.114.114
 gateway 192.168.1.193
-mtu 1454CopyErrorSuccess
+mtu 1454
 ```
 
 修改 dns-nameservers 这一行为：
 
 ```Plain
-dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114CopyErrorSuccess
+dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114
 ```
 
 并退出保存。
@@ -155,14 +155,14 @@ dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114CopyErrorSuccess
 1. 修改当前的/etc/resolv.conf 配置文件
 
 ```Plain
-sudo vi /etc/resolv.confCopyErrorSuccess
+sudo vi /etc/resolv.conf
 ```
 
 修改为：
 
 ```Plain
 nameserver 100.90.90.90
-nameserver 100.90.90.100CopyErrorSuccess
+nameserver 100.90.90.100
 ```
 
 DNS配置即可生效。
@@ -172,7 +172,7 @@ DNS配置即可生效。
 **非cloud init启动管理**
 
 ```Plain
-sudo vi /etc/network/interfacesCopyErrorSuccess
+sudo vi /etc/network/interfaces
 ```
 
 其内容可能如下：
@@ -186,13 +186,13 @@ address 172.16.0.35
 netmask 255.255.255.240
 gateway 172.16.0.33
 mtu 1454
-dns-nameservers 10.23.255.1 10.23.255.2 114.114.114.114CopyErrorSuccess
+dns-nameservers 10.23.255.1 10.23.255.2 114.114.114.114
 ```
 
 修改 dns-nameservers 这一行为
 
 ```Plain
-dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114CopyErrorSuccess
+dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114
 ```
 
 并退出保存。
@@ -200,7 +200,7 @@ dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114CopyErrorSuccess
 **使用cloud init进行启动管理**
 
 ```Plain
-sudo vi /etc/network/interfaces.d/50-cloud-initCopyErrorSuccess
+sudo vi /etc/network/interfaces.d/50-cloud-init
 ```
 
 其内容可能如下：
@@ -213,13 +213,13 @@ iface eth0 inet static
 address 192.168.1.248/26
 dns-nameservers 10.23.255.1 10.23.255.2 114.114.114.114
 gateway 192.168.1.193
-mtu 1454CopyErrorSuccess
+mtu 1454
 ```
 
 修改 dns-nameservers 这一行为
 
 ```Plain
-dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114CopyErrorSuccess
+dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114
 ```
 
 并退出保存。
@@ -229,14 +229,14 @@ dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114CopyErrorSuccess
 1. 修改/etc/resolv.conf 
 
 ```Plain
-sudo vim /etc/resolv.confCopyErrorSuccess
+sudo vim /etc/resolv.conf
 ```
 
 修改为以下内容：
 
 ```Plain
 nameserver 100.90.90.90
-nameserver 100.90.90.100CopyErrorSuccess
+nameserver 100.90.90.100
 ```
 
 保存退出，即可生效。
@@ -244,7 +244,7 @@ nameserver 100.90.90.100CopyErrorSuccess
 2. 进行持久化。查看当前网卡的配置文件 /etc/sysconfig/network-scripts/ifcfg-eth0
 
 ```Plain
-sudo vim /etc/sysconfig/network-scripts/ifcfg-eth0CopyErrorSuccess
+sudo vim /etc/sysconfig/network-scripts/ifcfg-eth0
 ```
 
 内容可能如下：
@@ -265,7 +265,7 @@ NM_CONTROLLED=no
 ONBOOT=yes
 STARTMODE=auto
 TYPE=Ethernet
-USERCTL=noCopyErrorSuccess
+USERCTL=no
 ```
 
 修改DNS相关配置如下：
