@@ -19,3 +19,4 @@
 | *.anaconda.com     |
 | *.k8s.io     |
 | *.gcr.io     |
+| *.wandb.ai     |
