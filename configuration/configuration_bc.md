@@ -42,44 +42,6 @@ sudo systemctl restart network
 ```
 重启完成即可生效。
 
-### **Ubuntu(含20.04/22.04/24.04)**
-
-1. 临时修改 DNS（立即生效，重启后失效）​
-
-```Plain
-sudo vim /etc/resolv.conf
-```
-
-删除原有nameserver行，添加以下内容：
-```Plain
-nameserver 100.90.90.90
-nameserver 100.90.90.100
-```
-
-保存退出  
-
-2. 持久化配置（重启后保留）​
-
-打开配置文件：
-```Plain
-sudo vim /etc/netplan/50-cloud-init.yaml
-```
-找到 nameservers: 区域，修改为：  
-```Plain
-nameservers:
-  addresses: [100.90.90.90, 100.90.90.100]  
-```
-保存并退出，让配置立即生效：
-```Plain
-sudo netplan apply 
-``` 
-验证 DNS 是否生效：
-```Plain
-resolvectl status | grep -i 'DNS Servers'
-``` 
-
-重启完成即可生效。
-
 ### **Ubuntu(含14.04/16.04/18.04)**
 
 1. 临时修改 DNS（立即生效，重启后失效）​
@@ -107,6 +69,10 @@ sudo vim /etc/network/interfaces
 ```Plain
 dns-nameservers 100.90.90.90 100.90.90.100  
 ```
+可选保留公共DNS（如114.114.114.114）作为备用，配置如下：
+```Plain
+dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114  
+``` 
 
 保存并退出，保存后重启网络服务： 
 ```Plain
@@ -123,12 +89,16 @@ sudo vim /etc/network/interfaces.d/50-cloud-init.cfg
 ```Plain
 dns-nameservers 100.90.90.90 100.90.90.100  
 ```
+可选保留公共DNS（如114.114.114.114）作为备用，配置如下：
+```Plain
+dns-nameservers 100.90.90.90 100.90.90.100 114.114.114.114  
+``` 
+
 保存并退出，保存后重启网络服务： 
 ```Plain
 sudo systemctl restart networking.service 
 ``` 
 重启完成即可生效。
-
 
 ### Debian(含8/9/10)
 
