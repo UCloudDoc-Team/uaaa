@@ -27,10 +27,10 @@ nameserver 100.90.90.100
 保存退出  
 
 2. 持久化配置（重启后保留）​
-```Plain
-sudo vim /etc/sysconfig/network-scripts/ifcfg-<网卡名>  # 例如ifcfg-eth0或ifcfg-ens33  
-```
 
+```Plain
+sudo vim /etc/sysconfig/network-scripts/ifcfg-<网卡名>  # 例如ifcfg-eth0或ifcfg-ens33
+```
 修改以下字段（若不存在则新增）:
 ```Plain
 DNS1=100.90.90.90  
@@ -72,10 +72,6 @@ nameservers:
 保存并退出，让配置立即生效：
 ```Plain
 sudo netplan apply 
-``` 
-验证 DNS 是否生效：
-```Plain
-resolvectl status | grep -i 'DNS Servers'
 ``` 
 
 重启完成即可生效。
@@ -225,16 +221,20 @@ nameserver 100.90.90.100
 保存退出  
 
 2. 持久化配置（重启后保留）​
+
 ```Plain
 sudo vim /etc/sysconfig/network-scripts/ifcfg-eth0
 ```
+
 找到eth0接口的dns-nameservers行，修改为：  
+
 ```Plain
 DNS1=100.90.90.90
 DNS2=100.90.90.100 
 ```
 
 保存并退出，保存后重启网络服务： 
+
 ```Plain
 sudo service network restart 
 ``` 
