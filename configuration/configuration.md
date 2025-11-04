@@ -260,7 +260,7 @@ sudo service network restart
 ## 四、验证配置生效
 配置完成后，可通过以下命令验证 DNS 是否生效：
 
-- Linux/macOS：nslookup [your-domain.com](http://your-domain.com/)，查看解析服务器是否为‘100.90.90.90’或‘100.90.90.100’。
+- Linux/macOS：nslookup [your-domain.com](http://your-domain.com/)，查看解析服务器是否为 `100.90.90.90` 或 `100.90.90.100`。
 
 - Windows：命令提示符执行nslookup，输入域名后查看 “服务器” 字段。
 
